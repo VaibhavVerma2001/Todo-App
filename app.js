@@ -108,6 +108,6 @@ app.post("/delete" , (req,res)=>{
 
 
 
-app.listen( process.env.PORT || 3000, () => {
-    console.log("Server started sucessfully...");
+app.listen(process.env.PORT ||3000, function () {
+    console.log("Server connected successfully...");
 });
