@@ -80,7 +80,18 @@ app.post("/", (req, res) => {
         name : itemName
     });
 
-    item1.save();
+    //TO  not save empty string
+    item1.name = item1.name.trim();
+    if(item1.name == "")
+    {
+        console.log("Empty string will not be saved!");
+        
+    }
+    else
+    {
+        item1.save();
+    }
+    
     res.redirect("/"); // redirect to home now
 });
 
