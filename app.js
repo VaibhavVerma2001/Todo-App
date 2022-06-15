@@ -2,7 +2,6 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const { urlencoded } = require("express");
 const mongoose = require("mongoose");
-const secret = require("./secret");
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -14,7 +13,7 @@ app.set('view engine', 'ejs');
 // 2 - change password
 // 3 - delete after .net to dbname
 const password = secret.password;
-var url = "mongodb+srv://vaibhav_verma:"+ password +"@cluster0.2dazz.mongodb.net/todoList";
+var url = "mongodb+srv://vaibhav_verma:Vaibhav2001@cluster0.2dazz.mongodb.net/todoList";
 mongoose.connect(url);
 
 
