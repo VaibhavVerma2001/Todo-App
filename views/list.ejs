@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- use below tag to get value from app.js -->
+    <!-- <h1>It's a <%= listTitle  %>!</h1> -->
+
+
+    <!-- to use like js use 'Scriptlet' tag before each js code-->
+    <!-- <% if(listTitle=="Saturday" || listTitle=="Sunday")
+    { %>
+        <h1 style="color: purple;">It's a <%= listTitle  %>!</h1>
+    <% }
+    else 
+    { %>
+        <h1 style="color: blue;">It's a <%= listTitle  %>!</h1>
+    <% } %> -->
+
+    <div class="box" id="heading">
+        <h1>
+            <%= listTitle %>
+        </h1>
+    </div>
+
+    <div class="box">
+        <!-- <li> <%= newListItem %> </li> -->
+        <!-- as newListItem is array -->
+        <!-- form to delete items -->
+        <form action="/delete" method="post">
+            <% newListItem.forEach(function(item){ %>
+                <div class="item">
+                    <!-- submitting a form when a checkbox is checked =>Use JavaScript by adding an onChange attribute to your input tags -->
+                    <input type="checkbox" name="checkbox" value="<%= item._id %>" onChange="this.form.submit()">
+                    <p>
+                        <%= item.name %>
+                    </p>
+                </div>
+            <% }) %>
+        </form>
+        
+        <form class="item" action="/" method="post">
+            <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+            <button type="submit" name="list" value=<%= listTitle %>>+</button>
+        </form>
+    </div>
+
+    <footer>
+        Copyright @ 2022 Vaibhav
+    </footer>
+
+</body>
+
+</html>
