@@ -2,7 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const { urlencoded } = require("express");
 const mongoose = require("mongoose");
-const secret = require("./secret.js");
+const secret = require("/secret.js");
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
