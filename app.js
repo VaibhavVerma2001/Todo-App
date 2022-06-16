@@ -2,6 +2,9 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const { urlencoded } = require("express");
 const mongoose = require("mongoose");
+// to use data from .env
+require("dotenv").config();
+
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -12,7 +15,10 @@ app.set('view engine', 'ejs');
 // 1 - to host change url before DB name
 // 2 - change password
 // 3 - delete after .net to dbname
-var url = "mongodb+srv://vaibhav_verma:Vaibhav2001@cluster0.2dazz.mongodb.net/todoList";
+
+// console.log(process.env);
+// console.log(process.env.DB_CONNECT);
+const url = process.env.DB_CONNECT;
 mongoose.connect(url);
 
 
