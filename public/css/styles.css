@@ -5,6 +5,11 @@ html {
   font-family: 'helvetica neue';
 }
 
+body{
+  margin: 0;
+  padding: 0;
+}
+
 h1 {
   color: #fff;
   padding: 10px;
@@ -93,4 +98,15 @@ footer {
   color: white;
   color: rgba(0, 0, 0, 0.5);
   text-align: center;
+}
+
+#preloader{
+  background : #000 url("./img/loader6.gif") no-repeat center center;
+  background-size: 15%;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  margin-top: 0;
+  top: 0;
 }
